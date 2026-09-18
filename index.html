@@ -32,10 +32,8 @@
     <!-- Hero Section com Vídeo -->
     <section id="hero" class="hero-section">
         <!-- Vídeo Background -->
-        <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%23fdba43' width='1280' height='720'/%3E%3C/svg%3E">
-            <source src="assets/video/background.mp4" type="video/mp4">
-            <!-- Fallback para imagem -->
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%23fdba43' width='1280' height='720'/%3E%3Ctext x='640' y='360' text-anchor='middle' dominant-baseline='middle' font-size='48' fill='%23b37d3e'%3EPet%3C/text%3E%3C/svg%3E" alt="Video Background">
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+            <source src="assets/video/cachorro-campo-pixabay.mp4" type="video/mp4">
         </video>
         
         <!-- Overlay -->
@@ -100,6 +98,10 @@
                 </div>
             </div>
         </div>
+
+        <a class="hero-video-credit" href="https://pixabay.com/videos/dog-running-playful-dog-332603/" target="_blank" rel="noopener noreferrer" aria-label="Ver o vídeo original na Pixabay">
+            Vídeo: Pixabay
+        </a>
     </section>
     
     <!-- ========== SEÇÃO COMO FUNCIONA ========== -->
@@ -234,58 +236,16 @@
                 <div class="title-underline"></div>
             </div>
             
-            <div class="row justify-content-center">
-                <!-- Representação da Carteirinha -->
-                <div class="col-md-6 col-lg-5">
-                    <div class="carteirinha-card">
-                        <!-- Frente da Carteirinha -->
-                        <div class="carteirinha-front">
-                            <!-- Header da Carteirinha -->
-                            <div class="carteirinha-header">
-                                <h3 class="carteirinha-brand">🐾 AMOR DE PATAS</h3>
-                                <p class="carteirinha-subtitle">Carteirinha de Vacinação</p>
-                            </div>
-                            
-                            <!-- Foto/Avatar -->
-                            <div class="carteirinha-avatar">
-                                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="60" cy="60" r="55" fill="#e3af6c" opacity="0.3"/>
-                                    <text x="60" y="75" font-size="50" text-anchor="middle">🐶</text>
-                                </svg>
-                            </div>
-                            
-                            <!-- Informações -->
-                            <div class="carteirinha-info">
-                                <div class="info-line">
-                                    <span class="info-label">Nome do Pet:</span>
-                                    <span class="info-value">____________________</span>
-                                </div>
-                                <div class="info-line">
-                                    <span class="info-label">Raça:</span>
-                                    <span class="info-value">____________________</span>
-                                </div>
-                                <div class="info-line">
-                                    <span class="info-label">Tutor:</span>
-                                    <span class="info-value">____________________</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Vacinas -->
-                            <div class="vacinas-section">
-                                <h4 class="vacinas-title">Vacinações</h4>
-                                <div class="vacina-item">
-                                    <span>Raiva</span>
-                                    <span class="vacina-line">_____________</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Logo Footer -->
-                            <div class="carteirinha-footer">
-                                <p style="margin: 0; font-size: 0.8rem;">Seu pet, seu estilo, seu momento.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="carteirinha-gallery" aria-label="Frente e verso da carteirinha de vacinação">
+                <figure class="carteirinha-preview">
+                    <img src="assets/images/carteirinha-frente.png" width="2000" height="1414" loading="lazy" decoding="async" alt="Frente da carteirinha de vacinação personalizada Amor de Patas">
+                    <figcaption>Frente da carteirinha</figcaption>
+                </figure>
+
+                <figure class="carteirinha-preview">
+                    <img src="assets/images/carteirinha-verso.png" width="2000" height="1414" loading="lazy" decoding="async" alt="Verso da carteirinha com o controle de vacinação do pet">
+                    <figcaption>Verso da carteirinha</figcaption>
+                </figure>
             </div>
             
             <!-- Texto Descritivo -->
@@ -523,18 +483,29 @@
                     <ul class="footer-links">
                         <li><a href="#formulario">Cadastre-se</a></li>
                         <li><a href="#" data-bs-toggle="modal" data-bs-target="#policyModal">Política de Privacidade</a></li>
-                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">[INSTAGRAM]</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-md-4 text-center text-md-end">
-                    <h4 class="footer-title">Entre em Contato</h4>
-                    <p class="footer-text">
-                        <a href="https://wa.me/[WHATSAPP_DA_EMPRESA]" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-small">
-                            💬 WhatsApp
+                    <h4 class="footer-title">Encontre a Amor de Patas</h4>
+                    <div class="footer-social-links">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar o Instagram da Amor de Patas">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <circle class="icon-fill" cx="17.5" cy="6.5" r="1"></circle>
+                            </svg>
+                            Instagram
                         </a>
-                    </p>
-                    <p class="footer-text text-muted" style="font-size: 0.9rem;">© 2026 Amor de Patas. Todos os direitos reservados.</p>
+                        <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Visitar o site da empresa">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path>
+                            </svg>
+                            Site da empresa
+                        </a>
+                    </div>
+                    <p class="footer-text footer-copyright">© 2026 Amor de Patas. Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>
