@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Participe da campanha da Amor de Patas e cadastre seu pet para receber informações sobre a vacinação gratuita contra a raiva.">
+    <meta name="theme-color" content="#fdba43">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Amor de Patas | Campanha de Vacinação Gratuita">
+    <meta property="og:description" content="Cadastre seu pet e receba uma Carteirinha de Vacinação Personalizada.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/fdba43/ffffff?text=Amor+de+Patas">
+    
+    <title>Amor de Patas | Campanha de Vacinação Gratuita</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23fdba43'>🐾</text></svg>">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ========== ESTRUTURA PRINCIPAL ========== -->
+    
+    <!-- Hero Section com Vídeo -->
+    <section id="hero" class="hero-section">
+        <!-- Vídeo Background -->
+        <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%23fdba43' width='1280' height='720'/%3E%3C/svg%3E">
+            <source src="assets/video/background.mp4" type="video/mp4">
+            <!-- Fallback para imagem -->
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect fill='%23fdba43' width='1280' height='720'/%3E%3Ctext x='640' y='360' text-anchor='middle' dominant-baseline='middle' font-size='48' fill='%23b37d3e'%3EPet%3C/text%3E%3C/svg%3E" alt="Video Background">
+        </video>
+        
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Conteúdo Hero -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                        <!-- Logo/Marca -->
+                        <div class="hero-brand">
+                            <h1 class="hero-title">🐾 AMOR DE PATAS</h1>
+                            <p class="hero-subtitle">Seu pet, seu estilo, seu momento.</p>
+                        </div>
+                        
+                        <!-- Headline Principal -->
+                        <div class="hero-headline mt-5">
+                            <h2 class="display-4 fw-bold mb-4" style="color: #fdba43; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+                                Vacinar também é um jeito de dizer: <br>
+                                <span style="color: #ffffff;">eu amo você. 🐾</span>
+                            </h2>
+                        </div>
+                        
+                        <!-- Descrição -->
+                        <p class="hero-description lead mb-5" style="color: #ffffff; font-size: 1.1rem; line-height: 1.6;">
+                            Participe da nossa campanha de vacinação gratuita contra a raiva e receba uma <strong>Carteirinha de Vacinação Personalizada</strong> para o seu pet.
+                        </p>
+                        
+                        <!-- CTA Button -->
+                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                            <a href="#formulario" class="btn btn-hero btn-lg">
+                                🐾 QUERO CADASTRAR MEU PET
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Ilustração/Elementos Hero -->
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <div class="hero-illustration">
+                            <!-- Formas orgânicas com SVG -->
+                            <svg class="floating-shape" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feDropShadow dx="0" dy="4" stdDeviation="3" flood-opacity="0.3"/>
+                                    </filter>
+                                </defs>
+                                
+                                <!-- Bolhas/Formas Orgânicas -->
+                                <circle cx="150" cy="150" r="120" fill="#ffffff" opacity="0.1" filter="url(#shadow)"/>
+                                <path d="M 80 50 Q 60 80, 90 120 Q 120 150, 80 180 Q 50 200, 40 160 Q 30 100, 80 50" fill="#fdba43" opacity="0.3" filter="url(#shadow)"/>
+                                <path d="M 200 80 Q 230 70, 240 110 Q 250 150, 210 170 Q 170 180, 180 130 Q 190 90, 200 80" fill="#fdba43" opacity="0.2" filter="url(#shadow)"/>
+                                
+                                <!-- Emojis flutuantes -->
+                                <text x="100" y="80" font-size="40" class="floating-emoji">🐶</text>
+                                <text x="200" y="120" font-size="40" class="floating-emoji" style="animation-delay: 0.5s;">🐱</text>
+                                <text x="150" y="200" font-size="35" class="floating-emoji" style="animation-delay: 1s;">❤️</text>
+                                <text x="220" y="60" font-size="30" class="floating-emoji" style="animation-delay: 1.5s;">🐾</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== SEÇÃO COMO FUNCIONA ========== -->
+    <section id="como-funciona" class="como-funciona-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Como Funciona? 🐾</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-4">
+                    <div class="card-funciona">
+                        <div class="card-number">01</div>
+                        <div class="card-icon">🐾</div>
+                        <h3 class="card-title">Cadastre-se</h3>
+                        <p class="card-description">Preencha seus dados e as informações do seu pet.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="col-md-4">
+                    <div class="card-funciona" style="animation-delay: 0.1s;">
+                        <div class="card-number">02</div>
+                        <div class="card-icon">💉</div>
+                        <h3 class="card-title">Participe</h3>
+                        <p class="card-description">Receba as informações sobre a campanha de vacinação gratuita contra a raiva.</p>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="col-md-4">
+                    <div class="card-funciona" style="animation-delay: 0.2s;">
+                        <div class="card-number">03</div>
+                        <div class="card-icon">❤️</div>
+                        <h3 class="card-title">Receba Sua Carteirinha</h3>
+                        <p class="card-description">Ganhe uma Carteirinha de Vacinação Personalizada para o seu pet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== SEÇÃO VACINAÇÃO ========== -->
+    <section id="vacinacao" class="vacinacao-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <!-- Ilustração -->
+                    <div class="vacinacao-illustration">
+                        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                    <feMerge>
+                                        <feMergeNode in="coloredBlur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Seringa -->
+                            <rect x="100" y="80" width="100" height="30" rx="15" fill="#fdba43" filter="url(#glow)"/>
+                            <circle cx="190" cy="95" r="12" fill="#b37d3e"/>
+                            <path d="M 80 95 L 100 95" stroke="#b37d3e" stroke-width="3" stroke-linecap="round"/>
+                            
+                            <!-- Gota -->
+                            <path d="M 150 130 Q 145 140 150 150 Q 155 140 150 130" fill="#ffffff" opacity="0.7"/>
+                            
+                            <!-- Coração -->
+                            <text x="150" y="220" font-size="50" text-anchor="middle">❤️</text>
+                            
+                            <!-- Patinhas -->
+                            <text x="80" y="150" font-size="35">🐾</text>
+                            <text x="220" y="160" font-size="35">🐾</text>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-4">Vacinar é Cuidar. ❤️</h2>
+                    
+                    <p class="section-text mb-4">
+                        A vacinação contra a raiva é uma importante forma de prevenção e ajuda a proteger nossos pets e toda a comunidade.
+                    </p>
+                    
+                    <!-- Informações da Campanha -->
+                    <div class="campaign-info">
+                        <div class="info-item">
+                            <span class="info-icon">📅</span>
+                            <div class="info-content">
+                                <strong>Data da Campanha:</strong>
+                                <p class="info-value">[DATA]</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-icon">⏰</span>
+                            <div class="info-content">
+                                <strong>Horário:</strong>
+                                <p class="info-value">[HORÁRIO]</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div class="info-content">
+                                <strong>Local:</strong>
+                                <p class="info-value">[LOCAL]</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-icon">ℹ️</span>
+                            <div class="info-content">
+                                <strong>Informações Importantes:</strong>
+                                <p class="info-value">[INFORMAÇÕES IMPORTANTES]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== SEÇÃO CARTEIRINHA ========== -->
+    <section id="carteirinha" class="carteirinha-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Seu Pet Merece Uma Carteirinha Cheia de Personalidade 🐾</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <!-- Representação da Carteirinha -->
+                <div class="col-md-6 col-lg-5">
+                    <div class="carteirinha-card">
+                        <!-- Frente da Carteirinha -->
+                        <div class="carteirinha-front">
+                            <!-- Header da Carteirinha -->
+                            <div class="carteirinha-header">
+                                <h3 class="carteirinha-brand">🐾 AMOR DE PATAS</h3>
+                                <p class="carteirinha-subtitle">Carteirinha de Vacinação</p>
+                            </div>
+                            
+                            <!-- Foto/Avatar -->
+                            <div class="carteirinha-avatar">
+                                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60" cy="60" r="55" fill="#e3af6c" opacity="0.3"/>
+                                    <text x="60" y="75" font-size="50" text-anchor="middle">🐶</text>
+                                </svg>
+                            </div>
+                            
+                            <!-- Informações -->
+                            <div class="carteirinha-info">
+                                <div class="info-line">
+                                    <span class="info-label">Nome do Pet:</span>
+                                    <span class="info-value">____________________</span>
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Raça:</span>
+                                    <span class="info-value">____________________</span>
+                                </div>
+                                <div class="info-line">
+                                    <span class="info-label">Tutor:</span>
+                                    <span class="info-value">____________________</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Vacinas -->
+                            <div class="vacinas-section">
+                                <h4 class="vacinas-title">Vacinações</h4>
+                                <div class="vacina-item">
+                                    <span>Raiva</span>
+                                    <span class="vacina-line">_____________</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Logo Footer -->
+                            <div class="carteirinha-footer">
+                                <p style="margin: 0; font-size: 0.8rem;">Seu pet, seu estilo, seu momento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Texto Descritivo -->
+            <div class="text-center mt-5">
+                <p class="section-text">
+                    <strong>A Carteirinha de Vacinação Personalizada é um documento importante</strong> que registra todas as vacinações do seu pet. Ao se cadastrar em nossa campanha, você receberá uma carteirinha exclusiva, personalizada com o nome e foto do seu melhor amigo.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== SEÇÃO FORMULÁRIO ========== -->
+    <section id="formulario" class="formulario-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="form-card">
+                        <h2 class="section-title text-center mb-5">Cadastre Seu Pet 🐾</h2>
+                        
+                        <form id="leadForm" class="lead-form">
+                            <!-- ===== SEÇÃO: DADOS DO RESPONSÁVEL ===== -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Dados do Responsável</legend>
+                                
+                                <div class="row">
+                                    <div class="col-12 position-relative">
+                                        <!-- Honeypot (invisível) -->
+                                        <input type="text" name="telefone_secundario" class="form-control d-none" tabindex="-1" autocomplete="off">
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="nome" class="form-label">
+                                                Nome Completo <span class="required">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome" maxlength="100" required>
+                                            <small class="form-text text-muted">Mínimo 2 caracteres</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="whatsapp" class="form-label">
+                                                WhatsApp <span class="required">*</span>
+                                            </label>
+                                            <input type="tel" class="form-control" id="whatsapp" name="whatsapp" placeholder="(11) 99999-9999" maxlength="15" required>
+                                            <small class="form-text text-muted">Com DDD, ex: 11999999999</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email" class="form-label">
+                                                E-mail <span class="required">*</span>
+                                            </label>
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com" maxlength="100" required>
+                                            <small class="form-text text-muted">Deve conter @ e domínio</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="cidade" class="form-label">
+                                                Cidade <span class="required">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="cidade" name="cidade" placeholder="São Paulo" maxlength="50" required>
+                                            <small class="form-text text-muted">Mínimo 2 caracteres</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label for="bairro" class="form-label">Bairro</label>
+                                            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Mooca (opcional)" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- ===== SEÇÃO: DADOS DO PET ===== -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Dados do Pet</legend>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="nome_pet" class="form-label">
+                                                Nome do Pet <span class="required">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="nome_pet" name="nome_pet" placeholder="Ex: Rex" maxlength="50" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="especie" class="form-label">
+                                                Espécie <span class="required">*</span>
+                                            </label>
+                                            <select class="form-select" id="especie" name="especie" required>
+                                                <option value="">-- Selecione --</option>
+                                                <option value="cachorro">🐶 Cachorro</option>
+                                                <option value="gato">🐱 Gato</option>
+                                                <option value="outro">🐰 Outro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="sexo" class="form-label">Sexo</label>
+                                            <select class="form-select" id="sexo" name="sexo">
+                                                <option value="">-- Selecione --</option>
+                                                <option value="macho">♂️ Macho</option>
+                                                <option value="femea">♀️ Fêmea</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="idade" class="form-label">Idade</label>
+                                            <input type="text" class="form-control" id="idade" name="idade" placeholder="Ex: 2 anos" maxlength="50">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="raca" class="form-label">Raça</label>
+                                            <input type="text" class="form-control" id="raca" name="raca" placeholder="Ex: Poodle" maxlength="50">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="mais_de_um_pet" class="form-label">Possui Mais de um Pet?</label>
+                                            <select class="form-select" id="mais_de_um_pet" name="mais_de_um_pet">
+                                                <option value="nao">Não</option>
+                                                <option value="sim">Sim</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- ===== SEÇÃO: ORIGEM DO LEAD ===== -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Como Ficou Sabendo da Campanha?</legend>
+                                
+                                <div class="form-group">
+                                    <label for="origem" class="form-label">
+                                        Origem <span class="required">*</span>
+                                    </label>
+                                    <select class="form-select" id="origem" name="origem" required>
+                                        <option value="">-- Selecione --</option>
+                                        <option value="instagram">📸 Instagram</option>
+                                        <option value="facebook">👍 Facebook</option>
+                                        <option value="whatsapp">💬 WhatsApp</option>
+                                        <option value="tiktok">🎵 TikTok</option>
+                                        <option value="google">🔍 Google</option>
+                                        <option value="indicacao">👥 Indicação</option>
+                                        <option value="outro">❓ Outro</option>
+                                    </select>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- ===== SEÇÃO: CONSENTIMENTO ===== -->
+                            <fieldset class="form-section">
+                                <legend class="form-section-title">Consentimento</legend>
+                                
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="consentimento_campanha" name="consentimento_campanha" required>
+                                    <label class="form-check-label" for="consentimento_campanha">
+                                        Autorizo a Amor de Patas a utilizar os dados fornecidos para entrar em contato comigo sobre esta campanha, conforme descrito na <a href="#" data-bs-toggle="modal" data-bs-target="#policyModal" class="link-policy">Política de Privacidade</a>. <span class="required">*</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="consentimento_marketing" name="consentimento_marketing">
+                                    <label class="form-check-label" for="consentimento_marketing">
+                                        Quero receber novidades, promoções e conteúdos da Amor de Patas.
+                                    </label>
+                                </div>
+                            </fieldset>
+                            
+                            <!-- ===== BOTÃO SUBMIT ===== -->
+                            <div class="form-group mt-5">
+                                <button type="submit" class="btn btn-form btn-lg w-100" id="submitBtn">
+                                    QUERO PARTICIPAR 🐾
+                                </button>
+                            </div>
+                            
+                            <!-- Mensagens de Resposta -->
+                            <div id="formMessage" class="alert mt-3" style="display: none;"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ========== SEÇÃO CTA FINAL ========== -->
+    <section id="cta-final" class="cta-final-section py-5">
+        <div class="container text-center">
+            <h2 class="section-title mb-4">Cuide Hoje de Quem Está Sempre ao Seu Lado 🐾</h2>
+            <p class="section-text mb-5">
+                Cadastre seu pet e participe da campanha de vacinação gratuita contra a raiva.
+            </p>
+            <a href="#formulario" class="btn btn-hero btn-lg">
+                QUERO PARTICIPAR
+            </a>
+        </div>
+    </section>
+    
+    <!-- ========== RODAPÉ ========== -->
+    <footer id="footer" class="footer-section">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <h3 class="footer-brand">🐾 AMOR DE PATAS</h3>
+                    <p class="footer-tagline">"Seu pet, seu estilo, seu momento."</p>
+                </div>
+                
+                <div class="col-md-4 text-center">
+                    <h4 class="footer-title">Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#formulario">Cadastre-se</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#policyModal">Política de Privacidade</a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">[INSTAGRAM]</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 text-center text-md-end">
+                    <h4 class="footer-title">Entre em Contato</h4>
+                    <p class="footer-text">
+                        <a href="https://wa.me/[WHATSAPP_DA_EMPRESA]" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-small">
+                            💬 WhatsApp
+                        </a>
+                    </p>
+                    <p class="footer-text text-muted" style="font-size: 0.9rem;">© 2026 Amor de Patas. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ========== MODAL: POLÍTICA DE PRIVACIDADE ========== -->
+    <div class="modal fade" id="policyModal" tabindex="-1" aria-labelledby="policyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="policyModalLabel">Política de Privacidade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="policy-content">
+                        <h6>1. Objetivo da Coleta de Dados</h6>
+                        <p>
+                            A Amor de Patas coleta seus dados para informar você sobre a campanha de vacinação gratuita contra a raiva e manter contato através de WhatsApp ou e-mail.
+                        </p>
+                        
+                        <h6>2. Dados Coletados</h6>
+                        <p>
+                            Coletamos informações pessoais como nome, WhatsApp, e-mail, cidade, bairro e informações sobre seu pet.
+                        </p>
+                        
+                        <h6>3. Como Usamos Seus Dados</h6>
+                        <p>
+                            Utilizamos seus dados exclusivamente para:
+                        </p>
+                        <ul>
+                            <li>Enviar informações sobre a campanha de vacinação</li>
+                            <li>Entrar em contato via WhatsApp ou e-mail</li>
+                            <li>Fornecer a Carteirinha de Vacinação Personalizada</li>
+                            <li>Se autorizado, enviar promoções e novidades</li>
+                        </ul>
+                        
+                        <h6>4. Proteção de Dados</h6>
+                        <p>
+                            Seus dados são armazenados de forma segura e não são compartilhados com terceiros sem sua autorização.
+                        </p>
+                        
+                        <h6>5. Direitos do Usuário</h6>
+                        <p>
+                            Você tem direito à privacidade conforme a Lei Geral de Proteção de Dados (LGPD) do Brasil.
+                        </p>
+                        
+                        <p style="margin-top: 2rem; font-size: 0.9rem; color: #666;">
+                            <strong>Nota:</strong> Esta é uma política genérica preparada para ser substituída pela política oficial da empresa posteriormente.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </modal>
+    
+    <!-- ========== SCRIPTS ========== -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    
+    <!-- Script Customizado -->
+    <script src="js/script.js" defer></script>
+</body>
+</html>
