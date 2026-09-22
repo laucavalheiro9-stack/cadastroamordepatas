@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐾 Amor de Patas — Dashboard de Marketing</title>
+<meta name="description" content="Dashboard completo de marketing e funil de conversão da Amor de Patas — 300 leads analisados.">
+
+<!-- Bootstrap 5 (vendorizado localmente — dashboard funciona 100% offline) -->
+<link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+<!-- Chart.js -->
+<script src="assets/vendor/chartjs/chart.umd.js"></script>
+<!-- Datalabels plugin -->
+<script src="assets/vendor/chartjs/chartjs-plugin-datalabels.min.js"></script>
+
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="app-shell">
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="app-header">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <div>
+        <p class="brand-title">🐾 AMOR DE PATAS <span class="fw-normal fs-6 opacity-75">— Dashboard de Marketing</span></p>
+        <p class="brand-sub">💛 Funil de conversão, origem de leads e perfil dos tutores &amp; pets · Guarulhos/SP</p>
+      </div>
+      <div class="d-flex align-items-center gap-2 header-actions">
+        <span class="badge-updated" id="baseInfo">📊 Base: 300 leads</span>
+        <button class="btn btn-outline-cream btn-sm" id="btnTheme" title="Alternar tema claro/escuro">🌙 Modo escuro</button>
+        <button class="btn btn-outline-cream btn-sm" id="btnFullscreen" title="Tela cheia">⛶ Tela cheia</button>
+        <button class="btn btn-gold btn-sm" id="btnReset">♻️ Limpar filtros</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================= FILTER BAR ============================= -->
+  <div class="filter-bar">
+    <div class="row g-2 align-items-end">
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">📣 Origem</label>
+        <select class="form-select form-select-sm" id="fOrigem"><option value="">Todas</option></select>
+      </div>
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">📍 Bairro</label>
+        <select class="form-select form-select-sm" id="fBairro"><option value="">Todos</option></select>
+      </div>
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">🐶 Espécie</label>
+        <select class="form-select form-select-sm" id="fEspecie"><option value="">Todas</option></select>
+      </div>
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">🎁 Interesse inicial</label>
+        <select class="form-select form-select-sm" id="fInteresse"><option value="">Todos</option></select>
+      </div>
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">🔥 MQL</label>
+        <select class="form-select form-select-sm" id="fMql">
+          <option value="">Todos</option>
+          <option value="Sim">Somente MQL</option>
+          <option value="Não">Não MQL</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">✅ Consentimento</label>
+        <select class="form-select form-select-sm" id="fConsentimento">
+          <option value="">Todos</option>
+          <option value="Sim">Consentiu</option>
+          <option value="Não">Não consentiu</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">📬 Aceita novidades</label>
+        <select class="form-select form-select-sm" id="fNovidades">
+          <option value="">Todos</option>
+          <option value="Sim">Aceita</option>
+          <option value="Não">Não aceita</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3 col-lg-auto">
+        <label class="filter-label">🐾 Multi-pet</label>
+        <select class="form-select form-select-sm" id="fMultiPet">
+          <option value="">Todos</option>
+          <option value="Sim">Mais de 1 pet</option>
+          <option value="Não">Apenas 1 pet</option>
+        </select>
+      </div>
+      <div class="col-12 col-lg ms-lg-auto text-lg-end">
+        <span class="filter-chip-count">Exibindo <strong id="filteredCount">300</strong> de <strong>300</strong> leads</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================= MAIN ============================= -->
+  <main class="app-main">
+
+    <!-- KPI CARDS -->
+    <div class="row kpi-row g-3">
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon">📥</div>
+          <div class="kpi-label">Total de leads</div>
+          <div class="kpi-value" id="kpiTotal">300</div>
+          <div class="kpi-sub" id="kpiTotalSub">100% da base filtrada</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon">🔥</div>
+          <div class="kpi-label">MQL (qualificados)</div>
+          <div class="kpi-value" id="kpiMql">172</div>
+          <div class="kpi-sub" id="kpiMqlSub">57.3% da base</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon">✅</div>
+          <div class="kpi-label">Consentimento (LGPD)</div>
+          <div class="kpi-value" id="kpiConsentimento">296</div>
+          <div class="kpi-sub" id="kpiConsentimentoSub">98.7% da base</div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="kpi-card">
+          <div class="kpi-icon">📬</div>
+          <div class="kpi-label">Aceita novidades</div>
+          <div class="kpi-value" id="kpiNovidades">172</div>
+          <div class="kpi-sub" id="kpiNovidadesSub">57.3% da base</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-banner mt-3" id="insightBanner">
+      <span class="lamp">💡</span>
+      <span id="insightText">Carregando leitura rápida dos dados filtrados…</span>
+    </div>
+
+    <!-- FUNIL DE MARKETING -->
+    <h2 class="section-title">🧲 Funil de marketing <span class="section-sub">da captação à ativação do lead</span></h2>
+    <div class="funnel-card">
+      <div class="funnel-wrap" id="funnelWrap"><!-- gerado via JS --></div>
+      <div class="funnel-legend-row">
+        <span>🟤 <strong>Leads totais</strong> — todo lead capturado</span>
+        <span>🟡 <strong>Consentimento</strong> — aceite LGPD registrado</span>
+        <span>🔵 <strong>MQL</strong> — lead qualificado para marketing</span>
+        <span>🟢 <strong>Aceita novidades</strong> — opt-in de comunicação ativa</span>
+      </div>
+    </div>
+
+    <!-- GRÁFICOS -->
+    <h2 class="section-title">📊 Análises detalhadas <span class="section-sub">clique em "ver tabela" para os valores exatos</span></h2>
+    <div class="chart-grid" id="chartGrid">
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>📣 Origem dos leads</h3>
+            <p class="chart-card-desc">De onde vieram os leads captados</p>
+          </div>
+          <button class="chart-toggle-table" data-target="origem">Ver tabela ▾</button>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartOrigem"></canvas></div>
+        <div class="chart-table-wrap d-none" id="table-origem"></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>🐶 Perfil dos pets — espécie</h3>
+            <p class="chart-card-desc">Cachorro, gato ou outro</p>
+          </div>
+          <button class="chart-toggle-table" data-target="especie">Ver tabela ▾</button>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartEspecie"></canvas></div>
+        <div class="chart-table-wrap d-none" id="table-especie"></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>🎁 Interesse inicial</h3>
+            <p class="chart-card-desc">Primeiro produto de interesse do lead</p>
+          </div>
+          <button class="chart-toggle-table" data-target="interesse">Ver tabela ▾</button>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartInteresse"></canvas></div>
+        <div class="chart-table-wrap d-none" id="table-interesse"></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>📍 Principais bairros</h3>
+            <p class="chart-card-desc">Concentração geográfica em Guarulhos</p>
+          </div>
+          <button class="chart-toggle-table" data-target="bairro">Ver tabela ▾</button>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartBairro"></canvas></div>
+        <div class="chart-table-wrap d-none" id="table-bairro"></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>🔥 Qualificação por origem</h3>
+            <p class="chart-card-desc">MQL vs. não-MQL em cada canal</p>
+          </div>
+          <button class="chart-toggle-table" data-target="mqlOrigem">Ver tabela ▾</button>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartMqlOrigem"></canvas></div>
+        <div class="chart-table-wrap d-none" id="table-mqlOrigem"></div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-head">
+          <div>
+            <h3>🐾 Tutores com mais de 1 pet</h3>
+            <p class="chart-card-desc">Oportunidade de cross-sell</p>
+          </div>
+          <button class="chart-toggle-table" data-target="multipet">Ver tabela ▾</button>
+        </div>
+        <div class="chart-canvas-wrap"><canvas id="chartMultiPet"></canvas></div>
+        <div class="chart-table-wrap d-none" id="table-multipet"></div>
+      </div>
+
+    </div>
+
+    <!-- TABELA DE LEADS (acessibilidade / detalhe total) -->
+    <h2 class="section-title">📋 Base de leads (detalhe) <span class="section-sub">todas as linhas da seleção atual</span></h2>
+    <div class="leads-table-wrap">
+      <table id="leadsTable">
+        <thead>
+          <tr>
+            <th>#</th><th>Origem</th><th>Bairro</th><th>Espécie</th><th>Interesse</th>
+            <th>MQL</th><th>Consentimento</th><th>Novidades</th><th>Multi-pet</th>
+          </tr>
+        </thead>
+        <tbody id="leadsTableBody"></tbody>
+      </table>
+      <div class="text-center py-2" id="tableMoreInfo" style="font-size:.78rem;color:var(--text-muted)"></div>
+    </div>
+
+  </main>
+
+  <footer class="app-footer">
+    🐾 Amor de Patas · Dashboard gerado a partir da base "LEADS 300" · Guarulhos/SP · Dados simulados a partir dos agregados do relatório original para fins de demonstração dos filtros.
+  </footer>
+</div>
+
+<script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
